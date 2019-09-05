@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49abceca5c4d73428d2e3e20eb46784, type: 3}
+  m_Name: TestConvo
+  m_EditorClassIdentifier: 
+  speakerLeft: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
+  speakerRight: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
+  lines:
+  - character: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
+    text: This a test conversation
+  - character: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
+    text: It's more like a monologue, to be honest.
+  - character: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
+    text: I hope this shit works.

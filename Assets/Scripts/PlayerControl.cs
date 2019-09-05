@@ -9,8 +9,17 @@ public class PlayerControl : MonoBehaviour
     // Bool
     public bool bUse;
 
+    // Numbers
     private float h;
     public float moveSpeedMultiplier = 5f;
+
+    // Components
+    private SpriteRenderer sr;
+
+    private void Awake()
+    {
+        sr = GetComponentInChildren<SpriteRenderer>();
+    }
 
     private void FixedUpdate()
     {
@@ -41,16 +50,17 @@ public class PlayerControl : MonoBehaviour
     /// </summary>
     private void Movement()
     {
+        Vector3 lastDir;
         //To know in which direction the player is facing, check if "h" is above or below 0. Above means right and below left.
-        if (h > 0)
+        if (h < 0)
         {
-            //lastDir = Vector3.right;
-            //sr.flipX = false;
+            lastDir = Vector3.right;
+            sr.flipX = false;
         }
-        else if (h < 0)
+        else if (h > 0)
         {
-            //lastDir = Vector3.left;
-            //sr.flipX = true;
+            lastDir = Vector3.left;
+            sr.flipX = true;
         }
 
         //Apply movement speed
