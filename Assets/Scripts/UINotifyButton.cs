@@ -9,16 +9,9 @@ public class UINotifyButton : MonoBehaviour
     public TMP_Text infoText;
     PlayerControl player;
 
-    public string textLadder = "CLIMB";
-    public string textLadderLeave = "STEP OFF";
-    public string textShadow = "HIDE";
-    public string textLeaveShadow = "LEAVE";
-    public string textSwitch = "USE SWITCH";
-    public string textExit = "NEXT AREA";
-
-    public string textDNACling = "PICK UP REVERSE LATCH";
-    public string textDNATrick = "PICK UP INFLUENCE";
-    public string textDNATrap = "PICK UP WOVEN TRAP";
+    public string textItem = "CLIMB";
+    public string textChar = "HIDE";
+    public string textDoor = "USE SWITCH";
 
     private void Awake()
     {
@@ -43,13 +36,13 @@ public class UINotifyButton : MonoBehaviour
         switch (_typeOfInteract)
         {
             case ETypeOfInteract.DOOR:
-                text.text = textSwitch;
+                text.text = textDoor;
                 break;
             case ETypeOfInteract.ITEM:
-                text.text = textLadder;
+                text.text = textItem;
                 break;
             case ETypeOfInteract.CHAR:
-                text.text = textShadow;
+                text.text = textChar;
                 break;
             default:
                 break;
