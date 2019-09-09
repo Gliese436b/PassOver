@@ -14,27 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerLeft: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
   speakerRight: {fileID: 11400000, guid: b75c0aac900072942837600c6486e46f, type: 2}
-  question: {fileID: 0}
-  nextConversation: {fileID: 0}
   lines:
   - character: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
     text: I'm death itself, and you're coming with me.
   - character: {fileID: 11400000, guid: b75c0aac900072942837600c6486e46f, type: 2}
-    text: You're Brent? I don't know any "Brent".
+    text: You're Beth? I don't know any "Beth".
   - character: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
     text: (...)
   - character: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
-    text: I'M DEATH, YOU DEAF FOOL! Black robes, big sharp scythe, walking skeleton?
+    text: I'M DEATH, YOU DEAF FOOL! black robes, big sharp scythe, walking skeleton?
       ring any bells?
   - character: {fileID: 11400000, guid: b75c0aac900072942837600c6486e46f, type: 2}
     text: Oh... Apologies. I see how it is now. I didn't mean to make your job harder,
       mister.
   - character: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
     text: You're very accepting of the fact a supernatural entity just claims to be
-      death, you know.
+      Death, you know.
   - character: {fileID: 11400000, guid: b75c0aac900072942837600c6486e46f, type: 2}
-    text: Well. I could feel it. There is not much time left in these bones. I might
+    text: Well, I could feel it. There is not much time left in these bones. I might
       be going crazy, but i won't fight it. It is what it is.
   - character: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
-    text: Hey, i like you, Old man. Tell you what, lets tour Limbo first, little gift
-      from your ol' pal death, for being a good boy. Come on, let's go.
+    text: Hey, I like you, Old man. Tell you what, lets tour Limbo first, little gift
+      from your ol' pal Death, for being a good boy. Come on, let's go.
+  question: {fileID: 0}
+  nextConversation: {fileID: 0}

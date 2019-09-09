@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerLeft: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
   speakerRight: {fileID: 11400000, guid: b75c0aac900072942837600c6486e46f, type: 2}
-  question: {fileID: 0}
-  nextConversation: {fileID: 0}
   lines:
   - character: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
     text: I'm a friendly salesman. May I interest you in our travel packages?
@@ -28,7 +26,9 @@ MonoBehaviour:
     text: Oh it's lovely! It's not much of anything really. But it can lead somewhere.
       Depends on you if you go to a paradise... or a very hot place.
   - character: {fileID: 11400000, guid: b75c0aac900072942837600c6486e46f, type: 2}
-    text: I can't wait! I'd love to see the countryside. reminds me of my old lady...
+    text: I can't wait! I'd love to see the countryside. Reminds me of my old lady...
   - character: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
     text: We can always make new memories. Maybe you'll find a lovely lady, where
       we are going. Come on, let's go.
+  question: {fileID: 0}
+  nextConversation: {fileID: 0}
