@@ -17,10 +17,34 @@ public class ConversationController:MonoBehaviour
     private int activeLineIndex = 0;
     private bool conversationStarted = false;
 
+    private PlayerControl player;
+
     public void ChangeConversation(Conversation nextConversation)
     {
         conversationStarted = false;
         conversation = nextConversation;
+        AdvanceLine();
+    }
+
+    private void OnEnable()
+    {
+        PlayerControl.OnActivate += PlayerControl_OnActivate;
+        InteractCharacter.OnTalk += InteractCharacter_OnTalk;
+    }
+
+    private void PlayerControl_OnActivate(PlayerControl _player)
+    {
+        player = _player;
+    }
+
+    private void OnDisable()
+    {   
+        PlayerControl.OnActivate -= PlayerControl_OnActivate;        
+        InteractCharacter.OnTalk -= InteractCharacter_OnTalk;
+    }
+
+    private void InteractCharacter_OnTalk(bool playerIsIn)
+    {
         AdvanceLine();
     }
 
@@ -49,6 +73,7 @@ public class ConversationController:MonoBehaviour
         conversationStarted = false;
         speakerUILeft.Hide();
         speakerUIRight.Hide();
+        player.bCanPlay = true;
     }
 
     private void Initialize()
