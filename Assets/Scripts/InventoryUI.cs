@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryUI:MonoBehaviour
+public class InventoryUI : MonoBehaviour
 {
     public enum EUIState { ENABLED, DISABLED }
 
@@ -18,15 +18,23 @@ public class InventoryUI:MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0 ; i < slots.Count ; i++)
-        {   
-            if (inventory.itemsInInventory[i] == null) break;    
+        SortInventory();
+    }
+
+    private void SortInventory()
+    {
+        for (int i = 0; i < inventory.itemsInInventory.Count; i++)
+        {
+            if (inventory.itemsInInventory[i] == null)
+            {
+                break;
+            }
 
             if (slots[i].itemInSlot == null)
             {
                 slots[i].itemInSlot = inventory.itemsInInventory[i];
                 slots[i].Initialize();
-            }   
+            }
         }
     }
 
@@ -52,6 +60,7 @@ public class InventoryUI:MonoBehaviour
         if (player.bUseInventory)
         {
             ToggleUI();
+            SortInventory();
         }
     }
 
@@ -68,7 +77,7 @@ public class InventoryUI:MonoBehaviour
 
             case EUIState.DISABLED:
 
-                inventoryObject.SetActive(true);   
+                inventoryObject.SetActive(true);
                 currUIState = EUIState.ENABLED;
 
                 break;

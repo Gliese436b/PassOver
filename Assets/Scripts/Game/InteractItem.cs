@@ -6,7 +6,7 @@ public class InteractItem : InteractBase
     // Collider del objeto
     
     Collider2D detectCollider;
-    GameItem item;
+    public GameItem item;
     bool playerInBounds;
 
     private void Start()
@@ -20,6 +20,8 @@ public class InteractItem : InteractBase
     public override void OnInteract()
     {        
         playerInBounds = detectCollider.bounds.Contains(player.transform.position);
+        player.playerInventory.itemsInInventory.Add(item);
+        gameObject.SetActive(false);
     }
 
     /// <summary>

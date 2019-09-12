@@ -20,6 +20,7 @@ public class PlayerControl : MonoBehaviour
 
     // Components
     private SpriteRenderer sr;
+    public ItemInventory playerInventory;
 
     private void Awake()
     {
