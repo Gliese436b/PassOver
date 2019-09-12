@@ -12,6 +12,7 @@ public class PlayerControl : MonoBehaviour
     // Bool
     public bool bCanPlay;
     public bool bUse;
+    public bool bUseInventory;
 
     // Numbers
     private float h;
@@ -49,6 +50,15 @@ public class PlayerControl : MonoBehaviour
         OnPlaying?.Invoke(this);
     }
 
+    public void PlayerInput()
+    {
+        if (!bCanPlay) return;
+
+        UseObject();
+        UseInventory();
+        h = Input.GetAxis("Horizontal");
+    }
+
     /// <summary>
     /// Interacts with objects with class InteractBase and triggers event OnActivate
     /// </summary>
@@ -61,6 +71,20 @@ public class PlayerControl : MonoBehaviour
             Debug.Log("Player interacts");
         }
         else bUse = false;
+    }
+
+    /// <summary>
+    /// Changes bOpenInventory to true for listening objects like InventoryUI to respond to.
+    /// </summary>
+    public void UseInventory()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            bUseInventory = true;
+            OnActivate?.Invoke(this);
+            Debug.Log("Player opens inventory");
+        }
+        else bUseInventory = false;
     }
 
     /// <summary>
@@ -89,11 +113,4 @@ public class PlayerControl : MonoBehaviour
         transform.Translate(h, 0f, 0f);
     }
 
-    public void PlayerInput()
-    {
-        if (!bCanPlay) return;
-
-        UseObject();
-        h = Input.GetAxis("Horizontal");
-    }
 }

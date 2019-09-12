@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Generador.cs" />
+    <Compile Include="Assets\InventorySlot.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
@@ -74,6 +75,8 @@
     <Compile Include="Assets\Scriptable Objects\Scripts\Character.cs" />
     <Compile Include="Assets\Scriptable Objects\Scripts\Conversation.cs" />
     <Compile Include="Assets\Scriptable Objects\Scripts\GameInstance.cs" />
+    <Compile Include="Assets\Scriptable Objects\Scripts\GameItem.cs" />
+    <Compile Include="Assets\Scriptable Objects\Scripts\ItemInventory.cs" />
     <Compile Include="Assets\Scriptable Objects\Scripts\Question.cs" />
     <Compile Include="Assets\Scripts\DialogueScripts\ChoiceController.cs" />
     <Compile Include="Assets\Scripts\DialogueScripts\ConversationController.cs" />
@@ -90,6 +93,7 @@
     <Compile Include="Assets\Scripts\Game\SaveLoadManager.cs" />
     <Compile Include="Assets\Scripts\Game\Singleton.cs" />
     <Compile Include="Assets\Scripts\Game\UINotifyButton.cs" />
+    <Compile Include="Assets\Scripts\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerControl.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

@@ -6,6 +6,7 @@ public class InteractItem : InteractBase
     // Collider del objeto
     
     Collider2D detectCollider;
+    GameItem item;
     bool playerInBounds;
 
     private void Start()
