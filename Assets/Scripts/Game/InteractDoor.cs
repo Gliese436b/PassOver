@@ -1,25 +1,50 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class InteractDoor : InteractBase
-{       
+{
     // Collider del objeto    
+    DialogueTrigger dialogueTrigger;
     Collider2D detectCollider;
     public string levelToLoadName;
+    public string doorKeyName;
     bool playerInBounds;
+    public bool bDoorNeedsKey;
 
-    private void Start()
-    {        
+    private void Awake()
+    {
         detectCollider = GetComponentInChildren<Collider2D>();
+        dialogueTrigger = GetComponent<DialogueTrigger>();
     }
 
     /// <summary>
     /// Funcion que se llama cuando el evento PlayerController.OnActivate se dispara
     /// </summary>
     public override void OnInteract()
-    {        
+    {
         playerInBounds = detectCollider.bounds.Contains(player.transform.position);
-        GameManager.Instance.LoadNextLevel(levelToLoadName);
+
+        if (playerInBounds)
+        {
+            if (bDoorNeedsKey)
+            {
+                dialogueTrigger.Dialogue();
+
+                for (int i = 0; i < player.playerInventory.itemsInInventory.Count; i++)
+                {
+                    if (player.playerInventory.itemsInInventory[i].itemName == doorKeyName)
+                    {
+                        player.playerInventory.DeleteFromInv(player.playerInventory.itemsInInventory[i]);
+                        GameManager.Instance.LoadNextLevel(levelToLoadName);
+                    }
+                    else print("Player needs the " + doorKeyName + " key.");
+                }
+            }
+            else
+            {
+                GameManager.Instance.LoadNextLevel(levelToLoadName);
+                print("Door doesn't need a key, opening...");
+            }
+        }
     }
 
     /// <summary>
@@ -31,15 +56,14 @@ public class InteractDoor : InteractBase
         if (!canInteract) return;
         OnInteract();
     }
-    
+
     /// <summary>
     /// Funcion que muestra y actualiza la UI con la informacion pertinente al objeto.
     /// </summary>
     public override void EnablePopUp()
-    { 
+    {
         canInteract = true;
         CallNotify(typeOfInteract, true, player);
-        print("prender el boton");
     }
 
     /// <summary>
@@ -49,7 +73,6 @@ public class InteractDoor : InteractBase
     {
         canInteract = false;
         CallNotify(typeOfInteract, false, player);
-        print("apagar el boton");
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -89,6 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8127474047825394180}
   - component: {fileID: 8127474047825394181}
+  - component: {fileID: 4246763229014457912}
   - component: {fileID: 8127474047825394182}
   m_Layer: 0
   m_Name: Door
@@ -128,6 +129,22 @@ MonoBehaviour:
   typeOfInteract: 0
   player: {fileID: 0}
   levelToLoadName: SampleScene
+  doorKeyName: 
+  bDoorNeedsKey: 0
+--- !u!114 &4246763229014457912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8127474047825394179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e97dcf833f8622d438db2dcd3098e7aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation: {fileID: 0}
+  question: {fileID: 0}
 --- !u!61 &8127474047825394182
 BoxCollider2D:
   m_ObjectHideFlags: 0

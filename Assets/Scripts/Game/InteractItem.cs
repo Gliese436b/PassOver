@@ -7,11 +7,18 @@ public class InteractItem : InteractBase
     
     Collider2D detectCollider;
     public GameItem item;
+    SpriteRenderer sr;
     bool playerInBounds;
 
-    private void Start()
-    {        
+    private void Awake()
+    {
         detectCollider = GetComponentInChildren<Collider2D>();
+        sr = GetComponentInChildren<SpriteRenderer>();
+    }
+
+    private void Start()
+    {  
+        sr.sprite = item.itemSprite;
     }
 
     /// <summary>
@@ -41,7 +48,6 @@ public class InteractItem : InteractBase
     { 
         canInteract = true;
         CallNotify(typeOfInteract, true, player);
-        print("prender el boton");
     }
 
     /// <summary>
@@ -51,7 +57,7 @@ public class InteractItem : InteractBase
     {
         canInteract = false;
         CallNotify(typeOfInteract, false, player);
-        print("apagar el boton");
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)

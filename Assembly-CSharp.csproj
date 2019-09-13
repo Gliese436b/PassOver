@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DialogueManager.cs" />
     <Compile Include="Assets\Generador.cs" />
     <Compile Include="Assets\InventoryDetail.cs" />
     <Compile Include="Assets\InventorySlot.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Assets\Scripts\DialogueScripts\ConversationController.cs" />
     <Compile Include="Assets\Scripts\DialogueScripts\QuestionController.cs" />
     <Compile Include="Assets\Scripts\DialogueScripts\SpeakerUI.cs" />
+    <Compile Include="Assets\Scripts\Game\DialogueTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\ExtensionMethods.cs" />
     <Compile Include="Assets\Scripts\Game\GameManager.cs" />
     <Compile Include="Assets\Scripts\Game\GenericLevel.cs" />

@@ -19,7 +19,7 @@ public class InventorySlot : MonoBehaviour
         slotName.text = itemInSlot.itemName;
         slotDescription.text = itemInSlot.itemDescription;
 
-        Debug.Log("Slot " + gameObject.name + " initialized.");
+        //Debug.Log("Slot " + gameObject.name + " initialized.");
     }
 
     public void ShowItemDetail()

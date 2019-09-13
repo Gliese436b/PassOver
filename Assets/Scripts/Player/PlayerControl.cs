@@ -27,6 +27,28 @@ public class PlayerControl : MonoBehaviour
         sr = GetComponentInChildren<SpriteRenderer>();
     }
 
+    private void OnEnable()
+    {
+        DialogueManager.OnFinishTalk += DialogueManager_OnFinishTalk;
+        DialogueManager.OnTalk += DialogueManager_OnTalk;
+    }
+
+    private void OnDisable()
+    {
+        DialogueManager.OnFinishTalk -= DialogueManager_OnFinishTalk;
+        DialogueManager.OnTalk -= DialogueManager_OnTalk;
+    }
+
+    private void DialogueManager_OnTalk()
+    {
+        bCanPlay = false;
+    }
+
+    private void DialogueManager_OnFinishTalk()
+    {
+        bCanPlay = true;
+    }
+
     private void Start()
     {
         Initialize();
@@ -53,9 +75,9 @@ public class PlayerControl : MonoBehaviour
 
     public void PlayerInput()
     {
+        UseObject();
         if (!bCanPlay) return;
 
-        UseObject();
         UseInventory();
         h = Input.GetAxis("Horizontal");
     }
@@ -69,7 +91,7 @@ public class PlayerControl : MonoBehaviour
         {
             bUse = true;
             OnActivate?.Invoke(this);
-            Debug.Log("Player interacts");
+            //Debug.Log("Player press E");
         }
         else bUse = false;
     }

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76b10ce62100614485c4622060193fb, type: 3}
   m_Name: Oldus
   m_EditorClassIdentifier: 
-  fullName: Death
+  fullName: Old Man
   portrait: {fileID: 21300000, guid: 15dc2b9f228bb474683ed208425c3d97, type: 3}

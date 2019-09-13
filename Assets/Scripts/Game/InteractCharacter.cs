@@ -1,30 +1,31 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class InteractCharacter : InteractBase
-{       
-    public delegate void FNotifyDialogue(bool playerIsIn);
-    public static event FNotifyDialogue OnTalk;
-    
+{
     // Collider del objeto
-    
+
+    DialogueTrigger dialogueTrigger;
     Collider2D detectCollider;
     bool playerInBounds;
 
-    private void Start()
-    {        
+    private void Awake()
+    {
         detectCollider = GetComponentInChildren<Collider2D>();
+        dialogueTrigger = GetComponent<DialogueTrigger>();
     }
 
     /// <summary>
     /// Funcion que se llama cuando el evento PlayerController.OnActivate se dispara
     /// </summary>
     public override void OnInteract()
-    {        
+    {
         playerInBounds = detectCollider.bounds.Contains(player.transform.position);
-        OnTalk?.Invoke(playerInBounds);
-        player.bCanPlay = false;
-        DisablePopUp();
+
+        if (playerInBounds)
+        {
+            dialogueTrigger.Dialogue();
+            DisablePopUp();
+        }
     }
 
     /// <summary>
@@ -32,19 +33,19 @@ public class InteractCharacter : InteractBase
     /// </summary>
     public override void PlayerControl_OnActivate(PlayerControl _player)
     {
+        //print("player" + _player);
         base.PlayerControl_OnActivate(_player);
-        if (!canInteract) return;
         OnInteract();
+        if (!canInteract) return;
     }
-    
+
     /// <summary>
     /// Funcion que muestra y actualiza la UI con la informacion pertinente al objeto.
     /// </summary>
     public override void EnablePopUp()
-    { 
+    {
         canInteract = true;
         CallNotify(typeOfInteract, true, player);
-        print("prender el boton");
     }
 
     /// <summary>
@@ -52,9 +53,7 @@ public class InteractCharacter : InteractBase
     /// </summary>
     public override void DisablePopUp()
     {
-        canInteract = false;
         CallNotify(typeOfInteract, false, player);
-        print("apagar el boton");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
