@@ -5,22 +5,22 @@ using UnityEngine.UI;
 
 public class GameManager:Singleton<GameManager>
 {
-    public PlayerControl player;
+    public PlayerController player;
     public Animator transitionAnim;
     public GameObject pressStart;
     public Image anim;
 
     private void OnEnable()
     {
-        PlayerControl.OnPlaying += PlayerControl_OnPlaying;
+        PlayerController.OnPlaying += PlayerControl_OnPlaying;
     }
 
     private void OnDisable()
     {
-        PlayerControl.OnPlaying -= PlayerControl_OnPlaying;
+        PlayerController.OnPlaying -= PlayerControl_OnPlaying;
     }
 
-    private void PlayerControl_OnPlaying(PlayerControl _player)
+    private void PlayerControl_OnPlaying(PlayerController _player)
     {
         player = _player;
     }

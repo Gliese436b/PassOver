@@ -17,7 +17,7 @@ public class ConversationController:MonoBehaviour
     private int activeLineIndex = 0;
     private bool conversationStarted = false;
 
-    private PlayerControl player;
+    private PlayerController player;
 
     public void ChangeConversation(Conversation nextConversation)
     {
@@ -28,22 +28,29 @@ public class ConversationController:MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerControl.OnActivate += PlayerControl_OnActivate;
-        DialogueManager.OnTalk += InteractCharacter_OnTalk;
+        PlayerController.OnActivate += PlayerControl_OnActivate;
+        DialogueManager.OnTalk += DialogueManager_OnTalk;
+        DialogueManager.OnFinishTalk += DialogueManager_OnFinishTalk;
     }
 
     private void OnDisable()
     {   
-        PlayerControl.OnActivate -= PlayerControl_OnActivate;
-        DialogueManager.OnTalk -= InteractCharacter_OnTalk;
+        PlayerController.OnActivate -= PlayerControl_OnActivate;
+        DialogueManager.OnTalk -= DialogueManager_OnTalk;
+        DialogueManager.OnFinishTalk -= DialogueManager_OnFinishTalk;
     }
 
-    private void PlayerControl_OnActivate(PlayerControl _player)
+    private void DialogueManager_OnFinishTalk()
+    {
+        //EndConversation();
+    }
+
+    private void PlayerControl_OnActivate(PlayerController _player)
     {
         player = _player;
     }
 
-    private void InteractCharacter_OnTalk()
+    private void DialogueManager_OnTalk()
     {
         AdvanceLine();
     }
@@ -60,20 +67,16 @@ public class ConversationController:MonoBehaviour
         {
             AdvanceLine();
         }
-
-        if (Input.GetButtonDown("Fire2"))
-        {
-            EndConversation();
-        }
     }
 
     private void EndConversation()
     {
+        DialogueManager.Instance.FinalizeConversation();
+        print("Ending convo");
         conversation = null;
         conversationStarted = false;
         speakerUILeft.Hide();
         speakerUIRight.Hide();
-        DialogueManager.Instance.FinalizeConversation();
     }
 
     private void Initialize()

@@ -1,4 +1,4 @@
-﻿public class DialogueManager : Singleton<DialogueManager>
+﻿public class DialogueManager:Singleton<DialogueManager>
 {
     public delegate void FNotifyDialogue();
     public static event FNotifyDialogue OnTalk, OnFinishTalk;
@@ -21,8 +21,8 @@
         questionController.question = Question;
     }
 
-    public void FinalizeConversation() 
-        {
-            OnFinishTalk?.Invoke();
-        }
+    public void FinalizeConversation()
+    {
+        OnFinishTalk?.Invoke();
+    }
 }

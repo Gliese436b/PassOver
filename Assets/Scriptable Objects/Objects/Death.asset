@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Death
   m_EditorClassIdentifier: 
   fullName: Death
-  portrait: {fileID: 21300000, guid: 12bc392ae2804ee43a61e15904283af3, type: 3}
+  portrait: {fileID: 21300000, guid: 7c3ab763784510a48a238435aef6a841, type: 3}

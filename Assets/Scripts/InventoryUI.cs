@@ -5,7 +5,7 @@ public class InventoryUI : MonoBehaviour
 {
     public enum EUIState { ENABLED, DISABLED }
 
-    private PlayerControl player;
+    private PlayerController player;
     public ItemInventory inventory;
     public GameObject inventoryObject;
     public EUIState currUIState;
@@ -40,15 +40,15 @@ public class InventoryUI : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerControl.OnActivate += PlayerControl_OnActivate;
+        PlayerController.OnActivate += PlayerControl_OnActivate;
     }
 
     private void OnDisable()
     {
-        PlayerControl.OnActivate -= PlayerControl_OnActivate;
+        PlayerController.OnActivate -= PlayerControl_OnActivate;
     }
 
-    private void PlayerControl_OnActivate(PlayerControl _player)
+    private void PlayerControl_OnActivate(PlayerController _player)
     {
         player = _player;
     }

@@ -8,12 +8,12 @@ public enum ETypeOfInteract { DOOR, ITEM, CHAR };
 
 public abstract class InteractBase : MonoBehaviour
 {
-    public delegate void FNotifyInteract(ETypeOfInteract _typeOfInteract, bool _onOff, PlayerControl _player);
+    public delegate void FNotifyInteract(ETypeOfInteract _typeOfInteract, bool _onOff, PlayerController _player);
     public static event FNotifyInteract OnNotifyInteract;
     
     public bool canInteract;
     public ETypeOfInteract typeOfInteract;
-    public PlayerControl player;
+    public PlayerController player;
 
     /// <summary>
     /// Whatever happens when interacting with the objects should happen here.
@@ -23,7 +23,7 @@ public abstract class InteractBase : MonoBehaviour
         
     }
 
-    public void CallNotify(ETypeOfInteract _typeOfInteract, bool _onOff, PlayerControl _player)
+    public void CallNotify(ETypeOfInteract _typeOfInteract, bool _onOff, PlayerController _player)
     {
         OnNotifyInteract?.Invoke(_typeOfInteract, _onOff, _player);
     }
@@ -39,15 +39,15 @@ public abstract class InteractBase : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerControl.OnActivate += PlayerControl_OnActivate;
+        PlayerController.OnActivate += PlayerControl_OnActivate;
     }
 
     private void OnDisable()
     {
-        PlayerControl.OnActivate -= PlayerControl_OnActivate;
+        PlayerController.OnActivate -= PlayerControl_OnActivate;
     }
 
-    public virtual void PlayerControl_OnActivate(PlayerControl _player)
+    public virtual void PlayerControl_OnActivate(PlayerController _player)
     {
         player = _player;   
     }

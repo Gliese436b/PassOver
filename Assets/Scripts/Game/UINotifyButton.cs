@@ -7,7 +7,7 @@ public class UINotifyButton : MonoBehaviour
     public TMP_Text text;
     public GameObject infoBox;
     public TMP_Text infoText;
-    PlayerControl player;
+    PlayerController player;
 
     public string textItem = "CLIMB";
     public string textChar = "HIDE";
@@ -28,7 +28,7 @@ public class UINotifyButton : MonoBehaviour
         InteractBase.OnNotifyInteract -= InteractBase_OnNotifyInteract;
     }
 
-    private void InteractBase_OnNotifyInteract(ETypeOfInteract _typeOfInteract, bool _onOff, PlayerControl _player)
+    private void InteractBase_OnNotifyInteract(ETypeOfInteract _typeOfInteract, bool _onOff, PlayerController _player)
     {
         player = _player;
         button.SetActive(_onOff);

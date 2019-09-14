@@ -31,7 +31,7 @@ public class InteractCharacter : InteractBase
     /// <summary>
     /// Implementacion del evento OnActivate del player.
     /// </summary>
-    public override void PlayerControl_OnActivate(PlayerControl _player)
+    public override void PlayerControl_OnActivate(PlayerController _player)
     {
         //print("player" + _player);
         base.PlayerControl_OnActivate(_player);
