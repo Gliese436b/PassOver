@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: Who are you?
   choices:
-  - text: (Persuade) I'm a friendly salesman. May I interest you in our travel packages?
+  - text: Persuade
     conversation: {fileID: 11400000, guid: c147821af6dd3d9498d2bf7a690f68af, type: 2}
-  - text: (Blunt) I'm death itself, and you're coming with me.
+  - text: Be blunt
     conversation: {fileID: 11400000, guid: 6f495296d305e7b409ce488e761c3744, type: 2}

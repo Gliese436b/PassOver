@@ -16,19 +16,19 @@ MonoBehaviour:
   speakerRight: {fileID: 11400000, guid: b75c0aac900072942837600c6486e46f, type: 2}
   lines:
   - character: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
-    text: I'm a friendly salesman. May I interest you in our travel packages?
+    text: I'm just passing by. I travel often.
   - character: {fileID: 11400000, guid: b75c0aac900072942837600c6486e46f, type: 2}
-    text: Oh! I do love to travel. Last time I was abroad I lost three of my hands
-      in the war!
+    text: Oh! I do love to travel. Last time my wife and I traveled was her last,
+      sadly... I miss her.
   - character: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
-    text: (Okay maybe not "wits". Maybe a singular, shriveled "wit".)
+    text: (I can't recall who this man's wife was... Maybe I should look around first)
   - character: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
-    text: Oh it's lovely! It's not much of anything really. But it can lead somewhere.
-      Depends on you if you go to a paradise... or a very hot place.
+    text: Well hey, it's not much really, but why don't you come with me? One last
+      trip in her memory?
   - character: {fileID: 11400000, guid: b75c0aac900072942837600c6486e46f, type: 2}
-    text: I can't wait! I'd love to see the countryside. Reminds me of my old lady...
+    text: It won't be the same without her. I appreciate the sentiment boy, but I
+      dont think I want to go anywhere. Nothing seems worth doing anymore.
   - character: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
-    text: We can always make new memories. Maybe you'll find a lovely lady, where
-      we are going. Come on, let's go.
+    text: (I need to learn more about this old man...)
   question: {fileID: 0}
   nextConversation: {fileID: 0}

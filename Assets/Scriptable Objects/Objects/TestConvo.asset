@@ -18,9 +18,9 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
     text: Greetings, Old man.
   - character: {fileID: 11400000, guid: b75c0aac900072942837600c6486e46f, type: 2}
-    text: Wh- Huh? Who are you? You look so malnourished... are you lost dear young'un?
+    text: 'Wh- Huh? Who are you? You look so malnourished... '
   - character: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
-    text: (Still have some of your wits about you, huh...)
+    text: (...)
   - character: {fileID: 11400000, guid: f53e740ccd912cb4b98735e742fa41d6, type: 2}
     text: I am...
   question: {fileID: 11400000, guid: 1b9593b381fd571419835190f8773420, type: 2}
